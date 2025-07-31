@@ -12,7 +12,7 @@ Introduktion till JavaScript som språk. Fokus på variabler, datatyper, villkor
 
 ## Denna vecka ska de studerande lära sig **färdigheter i (att)**:
 9. Skriva enkel JavaScript-kod för att skapa grundläggande interaktiva funktioner på webbsidor.  
-11. Debugga och testa enkel JavaScript.
+11.. Debugga och testa enkel JavaScript.
 
 ---
 
