@@ -8,11 +8,11 @@ Introduktion till JavaScript som språk. Fokus på variabler, datatyper, villkor
 ---
 
 ## Denna vecka ska de studerande lära sig **kunskaper i/om**:
-1. Grundläggande förståelse för JavaScript och dess användning för att skapa interaktivitet på webbsidor.
+4. Grundläggande förståelse för JavaScript och dess användning för att skapa interaktivitet på webbsidor.
 
 ## Denna vecka ska de studerande lära sig **färdigheter i (att)**:
-1. Skriva enkel JavaScript-kod för att skapa grundläggande interaktiva funktioner på webbsidor.  
-2. Debugga och testa enkel JavaScript.
+9. Skriva enkel JavaScript-kod för att skapa grundläggande interaktiva funktioner på webbsidor.  
+11. Debugga och testa enkel JavaScript.
 
 ---
 
