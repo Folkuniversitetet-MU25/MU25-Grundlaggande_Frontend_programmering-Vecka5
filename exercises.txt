@@ -1,0 +1,100 @@
+Självständiga övningar – JavaScript Intro
+=========================================
+
+Mål:
+- Träna på variabler (let/const), strängar, number, boolean
+- Använda console.log(), alert(), prompt()
+- Förstå typeof och grundläggande typomvandling (Number(), String(), Boolean())
+
+Instruktion:
+Jobba i ordning från BAS → MEDEL → AVANCERAD.
+
+// ===================================================
+// BAS
+// ===================================================
+
+1) Variabler & utskrift
+   - Skapa variablerna: name, age, favoriteColor (valfria värden).
+   - Skriv ut en mening i konsolen: "Hej NAME, du är AGE år och gillar COLOR."
+
+2) typeof
+   - Skapa minst 4 variabler med olika typer (t.ex. number, string, boolean, undefined).
+   - Skriv console.log på värde + typeof för varje.
+
+3) prompt + hälsning
+   - Fråga användaren om namn via prompt().
+   - Hälsa personen i en alert() och i console.log().
+
+4) NaN-test
+   - Logga resultatet av: 0/0, Number('kalle'), typeof NaN
+   - Skriv en kort kommentar i koden: vad observerar du?
+
+// ===================================================
+// MEDEL
+// ===================================================
+
+5) Mini-kalkylator
+   - Be användaren via prompt om två "tal".
+   - Konvertera med Number() och skriv ut summan.
+   - Hantera fallet att användaren skriver in ogiltiga tal (NaN) eller avbryter.
+
+6) Age-checker (boolean & villkor)
+   - Be om ålder (prompt → Number()).
+   - Skriv "Du är myndig" om age >= 18 annars "Du är inte myndig".
+   - Tips: visa både med alert och console.log.
+
+7) Template literals
+   - Bygg en mening med backticks och ${variabel}.
+   - Ex: `Hej ${name}, du är ${age} år och gillar ${favoriteColor}.`
+
+8) Null vs undefined
+   - Skapa en variabel utan värde → logga värde + typeof (undefined).
+   - Sätt en annan variabel till null → logga värde + typeof.
+   - Skriv en kommentar: när vill du använda null?
+
+// ===================================================
+// AVANCERAD (valfritt för den som blir klar för här kan ämnen vi inte hunnit prata om på lektionen komma behövas för att kunna lösa uppgifterna) 
+// ===================================================
+
+9) typeof explorer
+   - Gör en array med värden: 42, 3.14, 'hej', true, undefined, null, NaN, [1,2], {a:1}, function(){}, BigInt(10)
+   - Loopa igenom och logga värde + typeof. Kommentera null/NaN-resultaten.
+
+10) Strikt input
+   - Skriv en funktion safeNumber(promptText) som:
+       - frågar användaren efter ett värde,
+       - försöker konvertera till Number,
+       - upprepar frågan tills användaren skriver ett giltigt tal eller avbryter (returnera null vid avbryt).
+   - Använd den i mini-kalkylatorn så den blir robust.
+
+11) Mini-"profil" i DOM 
+   - Skapa en tom <div id="output"></div> i index.html.
+   - Hämta namn/ålder/färg via prompt och skriv ut en liten profil i div:en med innerText eller innerHTML.
+   - Extra: Färga texten i favoritfärgen (inline style). (Vi bryr oss inte om CSS ännu.)
+
+// ===================================================
+// (Frivilligt för nördarna ;) )
+// ===================================================
+
+12) Egen typomvandlare
+   - Skriv en funktion toNumberStrict(str) som returnerar antingen ett giltigt number eller kastar ett fel.
+   - Testa med try/catch och logga olika utfall.
+
+13) Truthy/Falsy-lista
+   - Skapa en lista med värden som du tror är truthy respektive falsy.
+   - Kör !!värde på dem och se om du hade rätt.
+
+// ===================================================
+// Mini code-review (2 stjärnor & 1 önskan) (Frivilligt)
+// ===================================================
+
+- Para ihop dig med en klasskompis.
+
+- Visa upp 2 av dina övningar (t.ex. 5 och 6).
+
+- Kompisen ger:
+  Två konkreta saker som är bra (namnval, struktur, felhantering, tydlig utskrift …)
+
+  En sak att förbättra (namn, kommentarer, felhantering, tydlighet …)
+
+- Skriv ner feedbacken i slutet av er js fil som kommentarer.

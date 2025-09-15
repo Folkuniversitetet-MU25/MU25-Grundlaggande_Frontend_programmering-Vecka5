@@ -1,0 +1,403 @@
+🧭 Workshop – 🚀 JavaScript Intro
+
+⏰ Tid: ca 3h
+📚 Kurs: Grundläggande Frontend-programmering
+📅 Vecka 5 – Måndag 8 sep
+
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål
+
+Efter lektionen ska studenterna kunna:
+
+✅ Förklara vad JavaScript är och var det körs
+✅ Använda script-taggen för inline och externa filer
+✅ Känna till datatyper
+✅ Deklarera variabler med let och const
+✅ Använda typeof, console.log(), alert() och prompt()
+
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering (3 timmar)
+
+– Intro 
+
+
+- PowerPoint: JavaScript
+
+
+– Code-Along
+
+Skapa en variabel för namn och ålder, skriv ut i en mening
+
+Använd prompt för att ta input från användaren
+
+typeof på olika variabler
+
+Använda console.log(), alert()
+
+
+– Självständiga övningar
+
+
+– Reflektion & Q&A
+
+
+– Summering
+
+
+- Teaser: Nästa lektion
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint – Talarmanus
+
+--------------------------------------------------
+
+🟨 Slide 1 – Introduktion JavaScript ES6+
+🗣️ “Idag ska vi börja med JavaScript – språket som gör webben interaktiv. Vi går igenom grunderna, men också lite moderna funktioner från ES6 och framåt.”
+
+--------------------------------------------------
+
+🟨 Slide 2 – Kort historik
+JavaScript skapades 1995 av Netscape och blev snabbt standard för att skapa interaktivitet i webbsidor.
+
+Det är ett skriptspråk – vilket betyder att det tolkas av webbläsaren i realtid och inte behöver kompileras i förväg som t.ex. C eller Java.
+
+Det gör det enkelt att testa och snabbt se resultat.
+
+JavaScript fungerar i alla webbläsare, både på desktop, mobil och surfplattor.
+
+Och viktigt att komma ihåg: JavaScript har ingenting med Java att göra – namnet var mest ett marknadsföringsknep på 90-talet.
+
+--------------------------------------------------
+
+🟨 Slide 3 – Node.js och terminalen
+🗣️ “Förutom i webbläsaren kan vi köra JavaScript på serversidan med Node.js. Det gör att vi kan använda samma språk för både frontend och backend.
+
+Det är idag väldigt vanligt – nästan alla moderna webbtjänster använder Node på något sätt, antingen i backend eller i utvecklingsverktyg som bygger och testar frontendkod.
+
+När vi kör i terminalen kör vi inte mot en webbsida – utan mot datorns filsystem, nätverk eller andra resurser.”
+
+--------------------------------------------------
+
+🟨 Slide 4 – Köra JavaScript i webbläsaren
+🗣️ “Vi kan lägga till JavaScript med <script>-taggen i HTML.
+Antingen inline direkt i sidan, eller via en extern .js-fil.
+
+Varför är det bäst att använda externa filer?
+
+Koden blir återanvändbar och lättare att underhålla.
+
+Webbläsaren kan cacha filen så sidan laddas snabbare.
+
+HTML blir renare och tydligare när logik och struktur är separerade.”
+
+--------------------------------------------------
+
+🟨 Slide 5 – Köra JavaScript med Node.js
+🗣️ “När vi kör en .js-fil i Node har vi inte tillgång till webbläsarens API:er – alltså saker som document, window eller alert.
+
+Node är istället byggt för serverprogrammering: vi kan läsa/skriva filer, skapa webbtjänster eller prata med databaser.
+
+Så:
+
+Webbläsare = DOM, händelser, UI
+
+Node = server, filsystem, nätverk.”
+
+--------------------------------------------------
+
+🟨 Slide 6 – Datatyper (översikt)
+🗣️ “JavaScript har några grundläggande datatyper:
+
+Number: alla siffror (heltal, decimaltal).
+
+String: text inom citattecken.
+
+Boolean: true eller false.
+
+Undefined: variabeln är skapad men inget värde tilldelat.
+
+Null: värdet är medvetet satt till ‘inget’.
+
+Object: allt mer komplext – t.ex. arrayer, funktioner, objekt.
+
+Symbol: unika värden, används ofta som nycklar i objekt.
+
+BigInt: för extremt stora heltal som inte får plats i Number.
+
+Vi kommer prata mer i detalj om de vanligaste (Number, String, Boolean, Undefined, Null) i kommande slides. Men bra att ha koll på helheten.”
+
+--------------------------------------------------
+
+🟨 Slide 7 – Exempel på datatyper
+🗣️ “Här ser vi exempel på en siffra, en sträng, en boolean, en array och ett objekt. Alla ser olika ut i koden, men de är alla giltiga datatyper i JS.”
+
+🟨 – typeof
+🗣️ “Med typeof kan vi ta reda på vilken typ en variabel är. Exempel: typeof 42 returnerar ‘number’.”
+
+--------------------------------------------------
+
+🟨 Slide 8 – Parenteser
+🗣️ “Vi använder tre sorters parenteser i JS:
+
+() runda – används för funktioner och villkor. Ex: alert('Hej').
+
+{} klamrar – används för kodblock, t.ex. if-satser eller funktioner.
+
+[] hakparenteser – används för arrayer och indexering. Ex: myArray[0].
+
+Det här är en av de första sakerna man måste bli bekväm med – de olika parenteserna har väldigt olika betydelser.”
+
+--------------------------------------------------
+
+🟨 Slide 9 – String
+🗣️ “Strängar är text. De skrivs inom ' eller " – båda fungerar.
+Man kan också använda template literals med backticks `` som tillåter variabler och radbrytningar:
+let namn = 'Pelle';
+console.log(`Hej, ${namn}!`);
+
+Alternativt kan att slå ihop med +.
+Men gör koden mer läsbar än template literals?”
+--------------------------------------------------
+
+🟨 Slide 10 – Number
+🗣️ “Alla tal i JS har samma datatyp – både heltal och decimaltal. Ogiltiga beräkningar ger NaN, Not a Number. Men: typeof NaN är fortfarande ‘number’ – en lite märklig detalj i JS.”
+
+--------------------------------------------------
+
+🟨 Slide 11 – NaN
+🗣️ “NaN står för Not-a-Number. Lite lurigt: NaN är faktiskt av typen number i JavaScript.
+
+Det används för att representera:
+
+en beräkning som inte går att räkna ut
+
+en misslyckad typomvandling
+
+Viktigt: NaN smittar. Om du gör fler beräkningar med NaN blir resultatet också NaN.”
+
+--------------------------------------------------
+
+🟨 Slide 12 – Undefined och null
+🗣️ Undefined: variabeln är deklarerad men inte fått något värde.
+Null: vi sätter själva värdet till ‘inget’.
+
+Skillnaden: undefined betyder ‘inget har tilldelats än’, null betyder ‘inget, med flit’.”
+
+--------------------------------------------------
+
+🟨 Slide 13 – Datatyper: null och undefined
+🗣️ “Undefined = standardvärdet när en variabel är deklarerad men inte har fått något värde än.
+
+Null = används av oss för att uttryckligen säga att en variabel inte har något värde ännu.
+
+Skillnad: undefined = ‘inte satt än’, null = ‘avsiktligt tomt’.”
+
+--------------------------------------------------
+
+🟨 Slide 14 – Typkonvertering
+🗣️ ““JavaScript gör ibland automatisk typomvandling, s.k. type coercion.
+
+ Till exempel ‘5’ + 2 blir strängen ‘52’. ”
+
+Det kan ge oväntade resultat, så man måste vara vaksam.”
+
+--------------------------------------------------
+
+🟨 Slide 15 – Explicita typomvandlingar
+🗣️ “Vi kan själva konvertera med funktioner:
+
+Number('5') → 5
+
+String(5) → '5'
+
+Boolean(0) → false
+
+Om konvertering misslyckas blir resultatet NaN (Not a Number).”
+
+--------------------------------------------------
+
+🟨 Slide 16 – Mer om typkonverteringar
+🗣️
+“Vi kan tala om tre sorters typomvandlingar i JavaScript:
+
+Automatisk (implicit) – när JS själv omvandlar.
+Exempel: 'hello' + 42 → 'hello42'
+
+Explicit – när vi säger åt JS vad vi vill.
+Exempel: Number('45') → 45
+
+Egen funktion – vi kan skriva egna helpers för att konvertera.
+
+I praktiken använder vi oftast explicit omvandling för att ha kontroll. Automatisk typomvandling kan vara praktisk, men kan också orsaka buggar.”
+
+--------------------------------------------------
+
+🟨 Slide 17 – Typomvandlingar (detaljerat)
+🗣️
+“JavaScript gör automatiska typomvandlingar när vi blandar olika typer i uttryck.
+
+Regler:
+
+-, *, / fungerar bara för tal → operanderna omvandlas till Number.
+
++ fungerar både för tal och strängar.
+
+Om båda är Number → resultat blir Number.
+
+Om någon är String → båda blir strängar och slås ihop.
+
+Boolean → omvandlas till Number (true = 1, false = 0).
+
+Exempel:
+'5' + 2   // '52'
+'5' - 2   // 3
+true + 5  // 6
+false + 'hej' // 'falsehej'
+
+Här ser ni varför vi måste vara försiktiga – resultaten är inte alltid det vi förväntar oss.”
+
+--------------------------------------------------
+
+🟨 Slide 18 – Truthy och Falsy
+🗣️ “I villkor tolkas värden som true eller false.
+Falsy-värden är: 0, null, undefined, NaN, och tom sträng ''.
+Allt annat är truthy – t.ex. 'hej', [], {}, -1.
+
+Det här är viktigt för att förstå hur if-satser fungerar.”
+
+--------------------------------------------------
+
+🟨 Slide 19 – Variabler
+🗣️ “En variabel är en behållare för data. Vi deklarerar dem oftastv med let eller const – det är det moderna sättet.”
+
+--------------------------------------------------
+
+🟨 Slide 20 – Deklarera en variabel
+🗣️ “Exempel: let myName = 'Pelle';. Här skapar vi en variabel och ger den direkt ett värde.”
+
+--------------------------------------------------
+
+🟨 Slide 21 – const, let och var
+🗣️ “Const används för värden som inte ska ändras. Let används när värdet kan uppdateras.
+
+Var är en äldre syntax som vi undviker i modern kod – men den finns kvar för bakåtkompatibilitet.
+Varför undviker vi den? Den har function scope istället för block scope, vilket kan skapa buggar.
+
+Men i vissa få fall, t.ex. när man måste skriva kod som fungerar i riktigt gamla miljöer eller när man vill ha function scope, kan var vara motiverat. Men i praktiken: använd let/const.”
+
+--------------------------------------------------
+
+🟨 Slide 22 – Deklarera med const
+“Const använder vi när vi har ett värde som vi vet aldrig ska förändras.
+En const måste initieras direkt, och sen går det inte att tilldela ett nytt värde – annars får vi ett fel i konsolen.
+
+Viktigt: objekt och arrayer deklarerade med const kan fortfarande få sina inre värden ändrade.
+
+Alltså: const låser själva referensen, inte innehållet.”
+
+--------------------------------------------------
+
+🟨 Slide 23 – Deklarera med let & var
+🗣️
+“JavaScript är dynamiskt typat – vi behöver inte skriva vilken typ variabeln har, det avgörs av värdet.
+
+let:
+
+Det moderna sättet att deklarera variabler.
+
+Har block scope – variabeln lever bara inom det kodblock {} där den deklarerats.
+
+var:
+
+Äldre sättet.
+
+Har function scope, inte block scope.
+
+Kan leda till oväntade buggar eftersom variabeln “lyfts upp” (hoisting).
+
+Därför använder vi nästan alltid let eller const idag. var förekommer fortfarande i äldre kodbaser, men sällan i nya projekt.”
+
+--------------------------------------------------
+
+🟨 Slide 24 – Namngivningskonventioner
+🗣️ “Variabelnamn kan innehålla bokstäver, siffror, $ och _. Men de får inte börja med siffror. Standard i JS är camelCase.”
+
+Konstanter skrivs ibland i VERSALER:
+const API_KEY = '1234';
+
+Håll namnen beskrivande – inte bara x och y, utan userAge eller productPrice.”
+
+--------------------------------------------------
+
+🟨 Slide 25 – Dynamiska variabler
+🗣️ “JavaScript är dynamiskt typat – en variabel kan byta typ under programmets gång. 
+
+Det ger flexibilitet men kan också skapa buggar.
+
+Därför har man byggt TypeScript – ett språk som bygger på JS men med statiska typer. Det används ofta i större projekt för att undvika buggar.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+💻 Code-Along – Portfolio-layout
+
+📂 Mappstruktur:
+
+mondayAgenda/
+  ├── indexCA.html
+  └── jsCA/scriptCA/indexCA.js
+
+indexCA.html 
+Genomför den koden
+
+scriptCA.js
+Genomför den koden
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Självständiga övningar
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+- Varför tror ni JavaScript blev så populärt?
+→ (Guidning: det körs i alla webbläsare, enkelt att börja med, stort ekosystem, används överallt på webben)
+--------------------------------------------------
+- Vad är skillnaden på JavaScript och Java?
+→ (Guidning: två helt olika språk, liknar bara i namn, JS är dynamiskt och tolkas i webbläsare, Java är kompilerat och körs i JVM)
+--------------------------------------------------
+- När bör man använda let och när const?
+→ (Guidning: använd const som standard, let om värdet ska ändras, undvik var om möjligt)
+--------------------------------------------------
+- Vad menas med att JavaScript är dynamiskt typat?
+→ (Guidning: man anger inte typen, den avgörs automatiskt av värdet; kan vara både flexibelt och riskabelt)
+
+--------------------------------------------------
+
+- Vad märkte du händer när du blandar typer (t.ex. tal + sträng)?
+
+--------------------------------------------------
+
+- Varför är typeof användbart?
+
+--------------------------------------------------
+--------------------------------------------------
+
+Individuell reflektion (tyst skrivtid)
+
+Be studenterna skriva ner kort:
+
+- En sak jag förstod riktigt bra idag.
+
+- En sak som fortfarande känns osäker.
+
+- Ett exempel jag själv vill testa hemma.
