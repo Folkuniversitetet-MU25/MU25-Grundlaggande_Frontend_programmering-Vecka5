@@ -1,100 +1,184 @@
-Självständiga övningar – JavaScript Intro
+Självständiga övningar – Jämförelser, villkor, arrayer & objekt
 =========================================
 
 Mål:
-- Träna på variabler (let/const), strängar, number, boolean
-- Använda console.log(), alert(), prompt()
-- Förstå typeof och grundläggande typomvandling (Number(), String(), Boolean())
 
-Instruktion:
-Jobba i ordning från BAS → MEDEL → AVANCERAD.
+Förstå skillnaden mellan == och ===.
 
-// ===================================================
-// BAS
-// ===================================================
+Träna på villkor med if, else if och else.
 
-1) Variabler & utskrift
-   - Skapa variablerna: name, age, favoriteColor (valfria värden).
-   - Skriv ut en mening i konsolen: "Hej NAME, du är AGE år och gillar COLOR."
+Använda arrayer och objekt.
 
-2) typeof
-   - Skapa minst 4 variabler med olika typer (t.ex. number, string, boolean, undefined).
-   - Skriv console.log på värde + typeof för varje.
+Få en introduktion till scope (global/local).
 
-3) prompt + hälsning
-   - Fråga användaren om namn via prompt().
-   - Hälsa personen i en alert() och i console.log().
+Instruktion: Jobba i ordning från BAS → MEDEL → AVANCERAD.
 
-4) NaN-test
-   - Logga resultatet av: 0/0, Number('kalle'), typeof NaN
-   - Skriv en kort kommentar i koden: vad observerar du?
+===================================================
+BAS
+===================================================
 
-// ===================================================
-// MEDEL
-// ===================================================
+1) Jämförelser
 
-5) Mini-kalkylator
-   - Be användaren via prompt om två "tal".
-   - Konvertera med Number() och skriv ut summan.
-   - Hantera fallet att användaren skriver in ogiltiga tal (NaN) eller avbryter.
+Testa följande uttryck i konsolen och skriv kommentar i koden om varför resultatet blir som det blir:
+console.log(1 == '1');  
+console.log(1 === '1');  
+console.log(0 == false);  
+console.log(0 === false);  
 
-6) Age-checker (boolean & villkor)
-   - Be om ålder (prompt → Number()).
-   - Skriv "Du är myndig" om age >= 18 annars "Du är inte myndig".
-   - Tips: visa både med alert och console.log.
 
-7) Template literals
-   - Bygg en mening med backticks och ${variabel}.
-   - Ex: `Hej ${name}, du är ${age} år och gillar ${favoriteColor}.`
+2) If/else – Väderlek
 
-8) Null vs undefined
-   - Skapa en variabel utan värde → logga värde + typeof (undefined).
-   - Sätt en annan variabel till null → logga värde + typeof.
-   - Skriv en kommentar: när vill du använda null?
+Skapa en variabel weather (sträng: "sol", "regn", "snö").
 
-// ===================================================
-// AVANCERAD (valfritt för den som blir klar för här kan ämnen vi inte hunnit prata om på lektionen komma behövas för att kunna lösa uppgifterna) 
-// ===================================================
+Skriv en if/else som loggar ett meddelande beroende på värdet:
 
-9) typeof explorer
-   - Gör en array med värden: 42, 3.14, 'hej', true, undefined, null, NaN, [1,2], {a:1}, function(){}, BigInt(10)
-   - Loopa igenom och logga värde + typeof. Kommentera null/NaN-resultaten.
+sol → "Ta solglasögon!"
 
-10) Strikt input
-   - Skriv en funktion safeNumber(promptText) som:
-       - frågar användaren efter ett värde,
-       - försöker konvertera till Number,
-       - upprepar frågan tills användaren skriver ett giltigt tal eller avbryter (returnera null vid avbryt).
-   - Använd den i mini-kalkylatorn så den blir robust.
+regn → "Glöm inte paraply!"
 
-11) Mini-"profil" i DOM 
-   - Skapa en tom <div id="output"></div> i index.html.
-   - Hämta namn/ålder/färg via prompt och skriv ut en liten profil i div:en med innerText eller innerHTML.
-   - Extra: Färga texten i favoritfärgen (inline style). (Vi bryr oss inte om CSS ännu.)
+annars → "Klä dig efter väder."
 
-// ===================================================
-// (Frivilligt för nördarna ;) )
-// ===================================================
+3) Array – Favoritfrukter
 
-12) Egen typomvandlare
-   - Skriv en funktion toNumberStrict(str) som returnerar antingen ett giltigt number eller kastar ett fel.
-   - Testa med try/catch och logga olika utfall.
+Skapa en array med tre frukter.
 
-13) Truthy/Falsy-lista
-   - Skapa en lista med värden som du tror är truthy respektive falsy.
-   - Kör !!värde på dem och se om du hade rätt.
+Logga ut den första, andra och tredje frukten.
 
-// ===================================================
-// Mini code-review (2 stjärnor & 1 önskan) (Frivilligt)
-// ===================================================
+Lägg till en ny frukt med .push() och logga hela arrayen.
+
+4) Operatorer
+
+Skapa två variabler a = 10 och b = 3.
+
+Logga resultatet av: a+b, a-b, a*b, a/b, a%b.
+
+Jämför: a == b, a != b, a > b.
+
+5) If-sats enkel
+
+Skapa en variabel age.
+
+Om age ≥ 18 → skriv “myndig”, annars “omyndig”.
+
+===================================================
+MEDEL
+===================================================
+
+6) If/else if – Poängräknare
+
+Skapa en variabel score (0–100).
+
+Skriv en if/else if som ger betyg:
+
+90+ → "A"
+
+75–89 → "B"
+
+50–74 → "C"
+
+annars → "F"
+
+7) Array – Klasslista 
+
+Skapa en array med fem namn.
+
+Logga ut varje namn individuellt med console.log(array[0]), console.log(array[1]), osv.
+
+Extra: Prova att byta ut ett namn med array[2] = "Nytt namn".
+
+
+8) Objekt – Profil
+
+Skapa ett objekt student med egenskaperna: name, age, city.
+
+Lägg till en metod greet() som returnerar en hälsning med this.name.
+
+Testa metoden i konsolen.
+
+===================================================
+AVANCERAD (valfritt för den som blir klar för här kan ämnen vi inte hunnit prata om på lektionen komma behövas för att kunna lösa uppgifterna) 
+===================================================
+
+9) Objekt – Flera profiler 
+
+Skapa tre olika objekt (student1, student2, student3).
+
+Lägg dem i en array students.
+
+Logga ut manuellt:
+
+console.log(students[0].name + " är " + students[0].age + " år");
+
+
+Diskutera: varför blir detta repetitivt? (bra krok inför framtida loopar).
+
+10) Scope-experiment
+
+Skapa en global variabel message = "Hej världen".
+
+Skriv en funktion printMessage() som:
+
+Deklarerar en lokal let message = "Hej från funktionen".
+
+Loggar både den lokala och den globala.
+
+Testa att byta let till var i funktionen och observera skillnaden.
+
+11) Quiz – Vad blir resultatet?
+
+Testa följande i konsolen och skriv ner resultatet som kommentar:
+
+console.log(10 + '20' + 30);  
+console.log(10 + 20 + '30');  
+console.log('10' - '5');  
+console.log([1,2] == '1,2');  
+console.log({} == {});  
+
+12) Profil i DOM
+
+Skapa en <div id="output"></div> i HTML.
+
+Hämta name, age, favoriteColor via prompt().
+
+Skriv ut en liten profil i div:en med innerText eller innerHTML.
+
+Extra: färga texten i favoritfärgen (inline style).
+
+===================================================
+(Frivilligt för nördarna ;) )
+===================================================
+
+13) Array-metoder
+
+Skapa en array med talen 1–10.
+
+Använd .filter() för att ta fram alla jämna tal.
+
+Använd .map() för att dubbla alla tal.
+
+Använd .reduce() för att summera dem.
+
+14) Objektkopiering
+
+Skapa ett objekt book = { title: "1984", author: "George Orwell" }.
+
+Kopiera det med spread-operatorn.
+
+Ändra titeln i kopian till "Animal Farm".
+
+Logga båda objekten och förklara varför de är separata.
+
+===================================================
+Mini code-review (2 stjärnor & 1 önskan) (Frivilligt)
+===================================================
 
 - Para ihop dig med en klasskompis.
 
-- Visa upp 2 av dina övningar (t.ex. 5 och 6).
+- Visa upp 2 av dina övningar.
 
 - Kompisen ger:
-  Två konkreta saker som är bra (namnval, struktur, felhantering, tydlig utskrift …)
+  Två konkreta saker som är bra 
 
-  En sak att förbättra (namn, kommentarer, felhantering, tydlighet …)
+  En sak att förbättra
 
 - Skriv ner feedbacken i slutet av er js fil som kommentarer.

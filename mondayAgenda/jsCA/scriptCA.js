@@ -1,16 +1,15 @@
-// 🗣️ Talarmanus: Skapa variabler
-let firstName = "Mandus";
-let age = 30;
-console.log("Hej, jag heter " + firstName + " och jag är " + age + " år.");
+// Array
+let fruits = ["äpple", "banan", "kiwi"];
+console.log(fruits[0]); // första
+console.log(fruits[fruits.length - 1]); // sista
 
-// 🗣️ Talarmanus: Använd prompt för input
-let userName = prompt("Vad heter du?");
-alert("Hej " + userName + "!");
+// Objekt
+let person = { name: "Anna", age: 25, city: "Göteborg" };
+console.log(`${person.name} är ${person.age} år och bor i ${person.city}.`);
 
-// 🗣️ Talarmanus: typeof exempel
-let isStudent = true;
-
-console.log(typeof firstName); // string
-console.log(typeof age); // number
-console.log(typeof isStudent); // boolean
-console.log(typeof userName); // string
+// If-sats
+if (person.age >= 18) {
+  console.log("myndig");
+} else {
+  console.log("omyndig");
+}
