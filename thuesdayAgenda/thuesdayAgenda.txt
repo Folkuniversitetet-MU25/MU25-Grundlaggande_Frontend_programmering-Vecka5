@@ -87,6 +87,8 @@ Vi kan också kedja: else if (...) för fler grenar. Poängen: skriv läsbara vi
 🟨 Slide 31 – Array/Listor
 🗣️ “En array är en lista av värden, till exempel tal, text eller objekt. Index börjar alltid på 0 – alltså första platsen är [0]. Om vi försöker komma åt ett index som inte finns får vi undefined. Vi kan lägga till med push() och ta bort med pop(). Ex: let list = [1, 2, true]; list.push(4); → nu innehåller listan 4 element. list.pop() tar bort sista elementet och returnerar det.”
 
+Array.lengt prata om det!
+
 --------------------------------------------------
 
 🟨 Slide 32 – Objekt
@@ -119,7 +121,7 @@ o.extra = 'New property'
 Vi kan också kopiera objekt med spread operatorn:
 let copy = { ...o }
 
-Nu får vi en ny kopia av objektet, och ändringar i kopian påverkar inte originalet."
+Nu får vi en ny inte kopia utan en referens av objektet, och ändringar i kopian påverkar inte originalet."
 
 --------------------------------------------------
 
@@ -197,6 +199,10 @@ Genomför den koden
 --------------------------------------------------
 
 - Har ni stött på situationer där truthy/falsy gav oväntade resultat?
+
+--------------------------------------------------
+
+- Vad kan hända om vi inte förstår skillnaden mellan global och lokal variabel?
 
 --------------------------------------------------
 --------------------------------------------------

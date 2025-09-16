@@ -13,3 +13,5 @@ if (person.age >= 18) {
 } else {
   console.log("omyndig");
 }
+
+// Eventuellt: Visa tydligt skillnaden på == vs === eller %-operatorn.
