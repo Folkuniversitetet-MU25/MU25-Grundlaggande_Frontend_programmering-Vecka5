@@ -1,184 +1,153 @@
-Självständiga övningar – Jämförelser, villkor, arrayer & objekt
-=========================================
+Självständiga övningar – DOM & Events
 
 Mål:
 
-Förstå skillnaden mellan == och ===.
+Träna DOM-selektorer: getElementById, getElementsByClassName, getElementsByTagName, querySelector, querySelectorAll
 
-Träna på villkor med if, else if och else.
+Ändra innehåll med textContent
 
-Använda arrayer och objekt.
+Händelser: addEventListener('click' | 'input')
 
-Få en introduktion till scope (global/local).
+Klasser: classList.add/remove/toggle
+
+Skapa/Lägga till/Ta bort element: createElement, appendChild, removeChild (eller .remove())
 
 Instruktion: Jobba i ordning från BAS → MEDEL → AVANCERAD.
+Tips: Ha DevTools Console öppen under hela arbetet.
 
 ===================================================
 BAS
 ===================================================
 
-1) Jämförelser
+1)Selektor–runda
 
-Testa följande uttryck i konsolen och skriv kommentar i koden om varför resultatet blir som det blir:
-console.log(1 == '1');  
-console.log(1 === '1');  
-console.log(0 == false);  
-console.log(0 === false);  
+- Skapa en enkel HTML med:
+<h1 id="title">Hej DOM</h1>
+<p class="info">Rad 1</p>
+<p class="info">Rad 2</p>
+<ul id="list"><li>Start</li></ul>
 
+- I script.js: Hämta element med:
 
-2) If/else – Väderlek
+getElementById('title')
 
-Skapa en variabel weather (sträng: "sol", "regn", "snö").
+getElementsByClassName('info')
 
-Skriv en if/else som loggar ett meddelande beroende på värdet:
+getElementsByTagName('p')
 
-sol → "Ta solglasögon!"
+querySelector('.info')
 
-regn → "Glöm inte paraply!"
+querySelectorAll('.info')
 
-annars → "Klä dig efter väder."
+- console.log varje selektor och förklara i en kommentar vad du får tillbaka (HTMLCollection/NodeList/enstaka element).
 
-3) Array – Favoritfrukter
+2) Ändra text
 
-Skapa en array med tre frukter.
+Välj <h1 id="title"> och sätt textContent = "DOM i praktiken"
 
-Logga ut den första, andra och tredje frukten.
+Välj den första .info och sätt textContent = "Första paragrafen uppdaterad"
 
-Lägg till en ny frukt med .push() och logga hela arrayen.
+Förklara i en kommentar vad som händer om du försöker använda innerHTML istället (vi använder inte det här, bara reflektion).
 
-4) Operatorer
+3)Klick–händelse
 
-Skapa två variabler a = 10 och b = 3.
+- Lägg till:
+<p id="message">Klicka knappen för att ändra mig</p>
+<button id="btn-change">Ändra text</button>
 
-Logga resultatet av: a+b, a-b, a*b, a/b, a%b.
+- I JS: addEventListener('click', ...) på knappen så att #message.textContent ändras till något nytt vid klick.
 
-Jämför: a == b, a != b, a > b.
+4)Toggle klass
 
-5) If-sats enkel
+- Lägg till CSS:
+.highlight { background: #fffae6; }
 
-Skapa en variabel age.
+- Lägg till en knapp “Markera” som toggle:ar .highlight på #message via element.classList.toggle('highlight').
 
-Om age ≥ 18 → skriv “myndig”, annars “omyndig”.
+5)Input → hälsning
+
+- HTML:
+<input id="name" placeholder="Ditt namn" />
+<button id="hello">Hälsa</button>
+<p id="greet"></p>
+
+- JS: vid klick → läs #name.value, skriv Hej, NAMN! till #greet.textContent. Om tomt → skriv “Skriv ditt namn först.”
 
 ===================================================
 MEDEL
 ===================================================
 
-6) If/else if – Poängräknare
+6)Lägg till rad i lista
 
-Skapa en variabel score (0–100).
+- HTML har <ul id="list"></ul> och ett input-fält + knapp:
+<input id="new-item" placeholder="Ny rad..." />
+<button id="add">Lägg till</button>
 
-Skriv en if/else if som ger betyg:
+- JS: när man klickar Lägg till:
+Skapa li med document.createElement('li')
 
-90+ → "A"
+Sätt textContent till inputens värde (trimma, avbryt om tomt)
 
-75–89 → "B"
+appendChild till #list
 
-50–74 → "C"
+Töm input och focus()
 
-annars → "F"
+7)Ta bort sista raden
 
-7) Array – Klasslista 
+ Lägg till knappen “Ta bort sista”.
 
-Skapa en array med fem namn.
+- Vid klick: hämta #list.lastElementChild och ta bort den med removeChild (om det finns någon).
 
-Logga ut varje namn individuellt med console.log(array[0]), console.log(array[1]), osv.
+8)Selectera flera & uppdatera
 
-Extra: Prova att byta ut ett namn med array[2] = "Nytt namn".
+- Hämta alla .info med querySelectorAll('.info')
 
+- Loopa igenom nodlistan och lägg till suffixet " ✅" i textContent på varje paragraf.
 
-8) Objekt – Profil
+9)Realtids–feedback (input event)
 
-Skapa ett objekt student med egenskaperna: name, age, city.
+- HTML:
+<input id="live" placeholder="Skriv något..." />
+<p id="mirror">Du skrev: </p>
 
-Lägg till en metod greet() som returnerar en hälsning med this.name.
-
-Testa metoden i konsolen.
+- JS: Lyssna på input på #live och uppdatera #mirror.textContent = 'Du skrev: ' + value.
 
 ===================================================
 AVANCERAD (valfritt för den som blir klar för här kan ämnen vi inte hunnit prata om på lektionen komma behövas för att kunna lösa uppgifterna) 
-===================================================
+===================================================,
 
-9) Objekt – Flera profiler 
+10)Klass–filter
 
-Skapa tre olika objekt (student1, student2, student3).
+- Anta en lista med <li class="todo">-rader. Skapa två knappar: “Markera alla”, “Avmarkera alla”.
 
-Lägg dem i en array students.
+- Vid klick: lägg till/ta bort .highlight på alla .todo–element (använd querySelectorAll + loop).
 
-Logga ut manuellt:
+11)Mini–byggare
 
-console.log(students[0].name + " är " + students[0].age + " år");
+- Skapa en knapp “Skapa ruta” som genererar en <div> med klass .box, sätter textContent = "Ny box" och append:ar i en <section id="area">.
 
+- Skapa en knapp “Rensa” som tar bort alla .box i #area (loopa och .remove()).
 
-Diskutera: varför blir detta repetitivt? (bra krok inför framtida loopar).
+12)Sök & ersätt (text)
 
-10) Scope-experiment
+- HTML:
+<input id="search" placeholder="Söktext" />
+<input id="replace" placeholder="Ersätt med" />
+<button id="do-replace">Sök/Ersätt</button>
+<p id="longtext">En längre text att testa sök och ersätt på...</p>
 
-Skapa en global variabel message = "Hej världen".
-
-Skriv en funktion printMessage() som:
-
-Deklarerar en lokal let message = "Hej från funktionen".
-
-Loggar både den lokala och den globala.
-
-Testa att byta let till var i funktionen och observera skillnaden.
-
-11) Quiz – Vad blir resultatet?
-
-Testa följande i konsolen och skriv ner resultatet som kommentar:
-
-console.log(10 + '20' + 30);  
-console.log(10 + 20 + '30');  
-console.log('10' - '5');  
-console.log([1,2] == '1,2');  
-console.log({} == {});  
-
-12) Profil i DOM
-
-Skapa en <div id="output"></div> i HTML.
-
-Hämta name, age, favoriteColor via prompt().
-
-Skriv ut en liten profil i div:en med innerText eller innerHTML.
-
-Extra: färga texten i favoritfärgen (inline style).
+- JS: Vid klick, hämta search och replace, om search icke-tomt → ersätt första förekomsten i #longtext.textContent med replace.
 
 ===================================================
 (Frivilligt för nördarna ;) )
 ===================================================
+13)NodeList vs HTMLCollection
 
-13) Array-metoder
+- Demonstrera (med console.log) skillnaden på querySelectorAll (NodeList, oftast statisk) och getElementsByClassName (HTMLCollection, live).
 
-Skapa en array med talen 1–10.
+- Visa att HTMLCollection ändras “live” när du lägger till/ta bort element.
 
-Använd .filter() för att ta fram alla jämna tal.
 
-Använd .map() för att dubbla alla tal.
+14)removeChild vs remove
 
-Använd .reduce() för att summera dem.
-
-14) Objektkopiering
-
-Skapa ett objekt book = { title: "1984", author: "George Orwell" }.
-
-Kopiera det med spread-operatorn.
-
-Ändra titeln i kopian till "Animal Farm".
-
-Logga båda objekten och förklara varför de är separata.
-
-===================================================
-Mini code-review (2 stjärnor & 1 önskan) (Frivilligt)
-===================================================
-
-- Para ihop dig med en klasskompis.
-
-- Visa upp 2 av dina övningar.
-
-- Kompisen ger:
-  Två konkreta saker som är bra 
-
-  En sak att förbättra
-
-- Skriv ner feedbacken i slutet av er js fil som kommentarer.
+- Skapa ett element, ta bort det en gång med parent.removeChild(child) och en gång med child.remove() och skriv i kommentar vad som skiljer dem åt.

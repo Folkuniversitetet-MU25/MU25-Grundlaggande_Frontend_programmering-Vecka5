@@ -1,0 +1,437 @@
+🧭 Workshop – 🚀 JavaScript & DOM Intro
+
+⏰ Tid: ca 3h
+📚 Kurs: Grundläggande Frontend-programmering
+📅 Vecka 5 – Fredag 19 sep
+
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål
+
+Efter lektionen ska studenterna kunna:
+
+✅ Förklara vad DOM är och varför den behövs
+✅ Hämta element med querySelector och querySelectorAll
+✅ Ändra textinnehåll med textContent
+✅ Använda addEventListener för events (t.ex. click och input)
+✅ Förstå hur DOM-manipulation skapar interaktiva webbsidor
+
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering (3 timmar)
+
+– Code Review av veckans läxor
+
+  - Studenterna visar upp "Card Game" eller "Tärningsspelet" i smågrupper. Diskussion: motgångar & smarta lösningar +2 stars 1 wish
+
+  - Helklass: Highlights.
+
+– PowerPoint & Teori (slides 41–56)
+
+– Code-Along
+
+– Självständiga övningar
+
+– Reflektion & Diskussion
+
+– Sammanfattning & Preview
+
+Wrap-up: DOM + nästa lektion: loopar
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint – Talarmanus (Slides 41 - 56)
+
+--------------------------------------------------
+
+🟨 Slide 41 – DOM: Document Object Model
+🗣️ “DOM står för Document Object Model. Det är en representation av hela webbsidan som ett träd av objekt – Varje HTML-tag blir ett objekt i trädet. Det är via DOM som JavaScript kan läsa och ändra innehållet på sidan.”
+
+--------------------------------------------------
+
+🟨 Slide 42 – Vad är DOM?
+🗣️ “Här ser vi hur DOM representeras som ett träd. Högst upp har vi document, sedan grenar som <html>, <head> och <body>, och under dessa alla element som rubriker, paragrafer, länkar osv. Ni kan tänka på det som ett familjeträd för vår HTML.”
+
+🗣️ “DOM står för Document Object Model.
+Det är en hierarkisk struktur som representerar hela webbsidan i minnet.
+Med DOM kan vi:
+
+göra webbsidor mer dynamiska och interaktiva,
+
+hantera events som klick och tangenttryckningar,
+
+och även använda det i andra områden som web scraping, SEO och testning.
+
+Tänk på DOM som ett träd av noder – varje HTML-element blir ett objekt i trädet, som vi kan hämta, ändra eller ta bort.”
+
+--------------------------------------------------
+
+🟨 Slide 43 – Vad är DOM? (grunddefinition)
+🗣️ “Här är samma begrepp mer kondenserat:
+
+Document – själva HTML-dokumentet.
+
+Object – varje element i HTML blir ett objekt i JavaScript.
+
+Model – det hela struktureras som en modell, ett träd.
+
+Och viktigt: DOM består av olika typer av noder – element, text, attribut. Det är dessa vi kan manipulera med JavaScript.”
+
+--------------------------------------------------
+
+🟨 Slide 44 – Hämta DOM-element
+🗣️ “Vi behöver först hitta element i DOM. Vi kan använda:
+
+getElementById, getElementsByClassName, getElementsByTagName
+
+Men modernast och enklast: querySelector (första matchen) och querySelectorAll (alla matchande).”
+
+--------------------------------------------------
+
+🟨 Slide 45 DOM-manipulation
+
+🗣️ Texten på sliden i PP är tillräcklig.
+
+--------------------------------------------------
+
+🟨 Slide 46 Manipulera DOMen
+
+🗣️ Texten på sliden i PP är tillräcklig.
+
+--------------------------------------------------
+
+🟨 Slide 47 Create, Append, Remove
+
+🗣️ Texten på sliden i PP är tillräcklig.
+
+--------------------------------------------------
+
+🟨 Slide 48 – Händelselyssnare
+🗣️ “Events är saker som händer: klick, tangenttryck, musrörelser. Med addEventListener kan vi säga: ‘när detta händer, kör den här funktionen’. Det är grunden för att göra appen interaktivitet.
+Vi kan lägga flera lyssnare på samma element, och vi separerar HTML och JS, och det är bra av flera skäl =)”
+
+--------------------------------------------------
+
+🟨 Slide 49 – Events: Syntax
+🗣️ “Exempel:
+
+button.addEventListener('click', () => {
+  console.log('Knappen klickades!');
+});
+
+Första argumentet är event-typen (‘click’), andra är funktionen som ska köras. Det går att lägga till flera listeners på samma element.”
+
+--------------------------------------------------
+
+🟨 Slide 50 – Vanliga Events
+🗣️ Eventsystemet gör att vi kan bygga dynamiska sidor som reagerar på användaren.”
+
+--------------------------------------------------
+
+🟨 Slide 51 – Vad är debugging?
+🗣️ “Debugging betyder bokstavligen att leta efter buggar. Det är processen där vi hittar, isolerar och åtgärdar fel i koden. Alla programmerare, oavsett nivå, stöter på buggar. Så debugging är inte ett tecken på att man är dålig – det är en del av själva jobbet.”
+
+--------------------------------------------------
+
+🟨 Slide 52 – Varför är det viktigt då?
+
+🗣️ “Om vi inte kan debugga fastnar vi. Debugging gör att vi kan:
+
+hitta fel snabbare, och förbättra koden
+
+spara tid,
+
+förstå koden bättre,
+
+och faktiskt bli mindre frustrerade.
+
+När man lär sig programmera kan det kännas jobbigt att se felmeddelanden – men de är egentligen ledtrådar. Ju bättre vi blir på debugging, desto snabbare löser vi problem.”
+
+--------------------------------------------------
+
+🟨 Slide 55 – Rubber duck debugging
+
+🗣️ “Rubber duck debugging är en rolig men effektiv metod. Du förklarar din kod högt, rad för rad – som om du pratade med en badanka.
+Genom att formulera koden med ord tvingas du se detaljer som du annars missar. Ofta hittar man felet redan innan man förklarat färdigt.
+
+Det fungerar för att du skapar en strukturerad reflektion, du bryter tankeblockeringar och du tränar problemlösningsförmågan. Så ibland behöver du inte fråga en kollega – prata med din ‘anka’ först!”
+
+--------------------------------------------------
+
+🟨 Slide 56 – DevTools och Console
+
+🗣️ “I webbläsaren har vi DevTools – utvecklarverktygen. Här kan vi se HTML, CSS och JavaScript i realtid. Konsolen är vårt bästa verktyg för debugging i JS.
+Vi kan logga ut variabler med console.log(), testa kod direkt och se felmeddelanden. Att bli vän med konsolen är en av de snabbaste vägarna till att förstå vad som egentligen händer i koden.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+💻 Code-Along
+
+📂 Mappstruktur:
+
+mondayAgenda/
+  ├── indexCA.html
+  └── scriptCA.js
+
+indexCA.html 
+Genomför den koden
+
+scriptCA.js
+Genomför den koden
+
+--------------------------------------------------
+--------------------------------------------------
+
+Testa code along koden - Guide:
+
+Förbered
+
+Öppna sidan i webbläsaren med DevTools → fliken Console synlig.
+
+Säkerställ att script.js laddas sist i <body> eller i <head> med defer.
+
+Ladda om sidan – inga röda fel i konsolen.
+
+--------------------------------------------------
+
+DEL A – Selektorerna (visa att vi hittar rätt noder)
+
+Mål: Bekräfta att alla huvudnoder kan väljas.
+
+getElementById
+
+I konsolen: document.getElementById('title')
+
+Förväntat: Ett h1#title-element loggas.
+
+Felsök: Stämmer id i HTML? (stavning, versaler)
+
+getElementsByClassName
+
+document.getElementsByClassName('info')
+
+Förväntat: HTMLCollection (live) med rätt längd (t.ex. 2).
+
+Felsök: Har du faktiskt .info i HTML på båda <p>?
+
+getElementsByTagName
+
+document.getElementsByTagName('p')
+
+Förväntat: HTMLCollection med alla <p>.
+
+querySelector
+
+document.querySelector('.info')
+
+Förväntat: Första .info-paragrafen.
+
+querySelectorAll
+
+document.querySelectorAll('.info')
+
+Förväntat: NodeList (oftast statisk) med alla .info.
+
+Mini-facit i konsolen:
+console.log({ byId: document.getElementById('title'), byClass: document.getElementsByClassName('info'), byTag: document.getElementsByTagName('p'), qsOne: document.querySelector('.info'), qsAll: document.querySelectorAll('.info') });
+
+--------------------------------------------------
+
+DEL B – Ändra text & klasser
+
+Mål: Visa textContent och classList.toggle.
+
+Ändra text
+
+JS-kod körs (eller i konsolen):
+
+const title = document.getElementById('title');
+title.textContent = 'DOM i praktiken';
+
+
+Förväntat: <h1>-texten uppdateras visuellt.
+
+Toggle klass med knapp
+
+Klicka knappen “Markera” som kör:
+
+message.classList.toggle('highlight');
+
+
+Förväntat: #message växlar bakgrund (på/av).
+
+Felsök: Finns .highlight i CSS? Rätt id (message) i JS?
+
+--------------------------------------------------
+
+DEL C – Events (click & input)
+
+Mål: Bekräfta addEventListener och läsa .value.
+
+Klick–ändring av text
+
+Klicka “Ändra text” (kopplad till #btn-change):
+Förväntat: #message.textContent ändras.
+
+Felsök:
+
+Har knappen rätt id i HTML?
+
+Sitter addEventListener('click', ...) på knappen?
+
+Finns elementet i DOM innan scriptet körs (placera script sist eller defer)?
+
+Input → hälsning
+
+Fyll i input #name, klicka “Hälsa”.
+
+Förväntat: #greet.textContent blir Hej, <namn>!
+
+Test: lämna input tom → Förväntat: “Skriv ditt namn först.”
+
+Felsök: Använder du .value på input (inte textContent)? Har du trim()-kontroll?
+
+--------------------------------------------------
+
+DEL D – Skapa, lägga till & ta bort element
+
+Mål: Visa createElement, appendChild, lastElementChild, removeChild.
+
+Lägg till rad i lista
+
+Skriv “Test 1” i #new-item och klicka “Lägg till”.
+
+Förväntat: Ett nytt <li> skapas och läggs sist i #list.
+
+Felsök:
+
+Hämtar du rätt input (#new-item)?
+
+const li = document.createElement('li') + li.textContent = ... + list.appendChild(li)?
+
+Ta bort sista
+
+Klicka “Ta bort sista”.
+
+Förväntat: Sista <li> i #list försvinner.
+
+Felsök:
+
+Kollar du null först?
+
+const last = list.lastElementChild;
+if (last) list.removeChild(last);
+
+--------------------------------------------------
+
+DEL E – Flera noder samtidigt (NodeList-loop)
+
+Mål: Visa querySelectorAll + loop.
+
+Uppdatera alla .info
+
+Kör:
+
+document.querySelectorAll('.info').forEach(p => {
+  p.textContent += ' ✅';
+});
+
+
+Förväntat: Alla .info får ett ✅-suffix.
+
+--------------------------------------------------
+
+DEL F – Realtid med input-event
+
+Mål: addEventListener('input', ...) – spegla text.
+
+Skrivspegel
+
+Skriv i #live → Förväntat: #mirror uppdateras till “Du skrev: <värde>” i realtid.
+
+Felsök:
+
+Lyssnar du på "input" (inte "change")?
+
+event.target.value eller live.value används?
+
+--------------------------------------------------
+
+Snabb “allt funkar”-runda (2 minuter inför paus)
+
+Klick Ändra text → #message ändras.
+
+Klick Markera två gånger → .highlight togglar.
+
+Skriv namn + Hälsa → “Hej, <namn>!” (och tomt fall varning).
+
+Lägg till “Test 1”, “Test 2” i listan → syns som <li>.
+
+Ta bort sista → sista <li> försvinner.
+
+Skriv i “Skriv något...” → spegel uppdateras i realtid.
+
+Kör .info-loopen → ✅ läggs till.
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Självständiga övningar
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+- DOM-strukturen
+
+Hur skulle du förklara DOM för någon som aldrig programmerat?
+
+Varför tror ni att DOM representeras som ett träd?
+
+--------------------------------------------------
+
+- Olika sätt att välja element
+
+När är det bäst att använda getElementById() kontra querySelector()?
+
+Vilka för- och nackdelar ser ni med att använda CSS-selektorer i querySelector()?
+
+--------------------------------------------------
+
+- Event-hantering
+
+Är addEventListener att föredra framför onclick i HTML? Varför, varför inte?
+
+Kan ni komma på situationer där flera event-lyssnare på samma element kan vara bra?
+
+--------------------------------------------------
+
+- Manipulation av innehåll
+
+Vad är skillnaden mellan att ändra innerHTML och textContent?
+
+Vilka risker kan det finnas med att använda innerHTML för att skriva ut användardata?
+
+--------------------------------------------------
+
+- Skapa & ta bort element
+
+Hur kan createElement() och appendChild() användas för att göra webbsidor mer dynamiska?
+
+Har ni exempel på webbsidor/appar där detta används i praktiken?
+
+--------------------------------------------------
+
+- Reflektion – användarupplevelse
+
+Hur kan små DOM-förändringar (t.ex. ändra text, färg eller visa/dölja element) påverka användarens upplevelse?
+
+Var går gränsen mellan “bra interaktivitet” och “förvirrande effekter”?
+
+--------------------------------------------------
+--------------------------------------------------
