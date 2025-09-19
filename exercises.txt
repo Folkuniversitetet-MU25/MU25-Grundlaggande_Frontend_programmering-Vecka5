@@ -151,3 +151,54 @@ AVANCERAD (valfritt för den som blir klar för här kan ämnen vi inte hunnit p
 14)removeChild vs remove
 
 - Skapa ett element, ta bort det en gång med parent.removeChild(child) och en gång med child.remove() och skriv i kommentar vad som skiljer dem åt.
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+- DOM-strukturen
+
+Hur skulle du förklara DOM för någon som aldrig programmerat?
+
+Varför tror ni att DOM representeras som ett träd?
+
+--------------------------------------------------
+
+- Olika sätt att välja element
+
+När är det bäst att använda getElementById() kontra querySelector()?
+
+Vilka för- och nackdelar ser ni med att använda CSS-selektorer i querySelector()?
+
+--------------------------------------------------
+
+- Event-hantering
+
+Är addEventListener att föredra framför onclick i HTML? Varför, varför inte?
+
+Kan ni komma på situationer där flera event-lyssnare på samma element kan vara bra?
+
+--------------------------------------------------
+
+- Manipulation av innehåll
+
+Vad är skillnaden mellan att ändra innerHTML och textContent?
+
+Vilka risker kan det finnas med att använda innerHTML för att skriva ut användardata?
+
+--------------------------------------------------
+
+- Skapa & ta bort element
+
+Hur kan createElement() och appendChild() användas för att göra webbsidor mer dynamiska?
+
+Har ni exempel på webbsidor/appar där detta används i praktiken?
+
+--------------------------------------------------
+
+- Reflektion – användarupplevelse
+
+Hur kan små DOM-förändringar (t.ex. ändra text, färg eller visa/dölja element) påverka användarens upplevelse?
+
+Var går gränsen mellan “bra interaktivitet” och “förvirrande effekter”?
