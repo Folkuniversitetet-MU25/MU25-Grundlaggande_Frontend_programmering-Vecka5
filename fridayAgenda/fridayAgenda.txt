@@ -36,9 +36,7 @@ Efter lektionen ska studenterna kunna:
 
 – Reflektion & Diskussion
 
-– Sammanfattning & Preview
-
-Wrap-up: DOM + nästa lektion: loopar
+– Sammanfattning & Preview nästa lektion
 
 --------------------------------------------------
 --------------------------------------------------
@@ -169,6 +167,8 @@ Vi kan logga ut variabler med console.log(), testa kod direkt och se felmeddelan
 --------------------------------------------------
 --------------------------------------------------
 
+Innan code along, visa och prata om hur man kan tänka för att attackera en övning som är lite större.
+
 💻 Code-Along
 
 📂 Mappstruktur:
@@ -182,6 +182,8 @@ Genomför den koden
 
 scriptCA.js
 Genomför den koden
+
+efter code along visa code review/MR i Github hur man arbetar proffisionellt med det.
 
 --------------------------------------------------
 --------------------------------------------------
