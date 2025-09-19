@@ -1,0 +1,153 @@
+Självständiga övningar – DOM & Events
+
+Mål:
+
+Träna DOM-selektorer: getElementById, getElementsByClassName, getElementsByTagName, querySelector, querySelectorAll
+
+Ändra innehåll med textContent
+
+Händelser: addEventListener('click' | 'input')
+
+Klasser: classList.add/remove/toggle
+
+Skapa/Lägga till/Ta bort element: createElement, appendChild, removeChild (eller .remove())
+
+Instruktion: Jobba i ordning från BAS → MEDEL → AVANCERAD.
+Tips: Ha DevTools Console öppen under hela arbetet.
+
+===================================================
+BAS
+===================================================
+
+1)Selektor–runda
+
+- Skapa en enkel HTML med:
+<h1 id="title">Hej DOM</h1>
+<p class="info">Rad 1</p>
+<p class="info">Rad 2</p>
+<ul id="list"><li>Start</li></ul>
+
+- I script.js: Hämta element med:
+
+getElementById('title')
+
+getElementsByClassName('info')
+
+getElementsByTagName('p')
+
+querySelector('.info')
+
+querySelectorAll('.info')
+
+- console.log varje selektor och förklara i en kommentar vad du får tillbaka (HTMLCollection/NodeList/enstaka element).
+
+2) Ändra text
+
+Välj <h1 id="title"> och sätt textContent = "DOM i praktiken"
+
+Välj den första .info och sätt textContent = "Första paragrafen uppdaterad"
+
+Förklara i en kommentar vad som händer om du försöker använda innerHTML istället (vi använder inte det här, bara reflektion).
+
+3)Klick–händelse
+
+- Lägg till:
+<p id="message">Klicka knappen för att ändra mig</p>
+<button id="btn-change">Ändra text</button>
+
+- I JS: addEventListener('click', ...) på knappen så att #message.textContent ändras till något nytt vid klick.
+
+4)Toggle klass
+
+- Lägg till CSS:
+.highlight { background: #fffae6; }
+
+- Lägg till en knapp “Markera” som toggle:ar .highlight på #message via element.classList.toggle('highlight').
+
+5)Input → hälsning
+
+- HTML:
+<input id="name" placeholder="Ditt namn" />
+<button id="hello">Hälsa</button>
+<p id="greet"></p>
+
+- JS: vid klick → läs #name.value, skriv Hej, NAMN! till #greet.textContent. Om tomt → skriv “Skriv ditt namn först.”
+
+===================================================
+MEDEL
+===================================================
+
+6)Lägg till rad i lista
+
+- HTML har <ul id="list"></ul> och ett input-fält + knapp:
+<input id="new-item" placeholder="Ny rad..." />
+<button id="add">Lägg till</button>
+
+- JS: när man klickar Lägg till:
+Skapa li med document.createElement('li')
+
+Sätt textContent till inputens värde (trimma, avbryt om tomt)
+
+appendChild till #list
+
+Töm input och focus()
+
+7)Ta bort sista raden
+
+ Lägg till knappen “Ta bort sista”.
+
+- Vid klick: hämta #list.lastElementChild och ta bort den med removeChild (om det finns någon).
+
+8)Selectera flera & uppdatera
+
+- Hämta alla .info med querySelectorAll('.info')
+
+- Loopa igenom nodlistan och lägg till suffixet " ✅" i textContent på varje paragraf.
+
+9)Realtids–feedback (input event)
+
+- HTML:
+<input id="live" placeholder="Skriv något..." />
+<p id="mirror">Du skrev: </p>
+
+- JS: Lyssna på input på #live och uppdatera #mirror.textContent = 'Du skrev: ' + value.
+
+===================================================
+AVANCERAD (valfritt för den som blir klar för här kan ämnen vi inte hunnit prata om på lektionen komma behövas för att kunna lösa uppgifterna) 
+===================================================,
+
+10)Klass–filter
+
+- Anta en lista med <li class="todo">-rader. Skapa två knappar: “Markera alla”, “Avmarkera alla”.
+
+- Vid klick: lägg till/ta bort .highlight på alla .todo–element (använd querySelectorAll + loop).
+
+11)Mini–byggare
+
+- Skapa en knapp “Skapa ruta” som genererar en <div> med klass .box, sätter textContent = "Ny box" och append:ar i en <section id="area">.
+
+- Skapa en knapp “Rensa” som tar bort alla .box i #area (loopa och .remove()).
+
+12)Sök & ersätt (text)
+
+- HTML:
+<input id="search" placeholder="Söktext" />
+<input id="replace" placeholder="Ersätt med" />
+<button id="do-replace">Sök/Ersätt</button>
+<p id="longtext">En längre text att testa sök och ersätt på...</p>
+
+- JS: Vid klick, hämta search och replace, om search icke-tomt → ersätt första förekomsten i #longtext.textContent med replace.
+
+===================================================
+(Frivilligt för nördarna ;) )
+===================================================
+13)NodeList vs HTMLCollection
+
+- Demonstrera (med console.log) skillnaden på querySelectorAll (NodeList, oftast statisk) och getElementsByClassName (HTMLCollection, live).
+
+- Visa att HTMLCollection ändras “live” när du lägger till/ta bort element.
+
+
+14)removeChild vs remove
+
+- Skapa ett element, ta bort det en gång med parent.removeChild(child) och en gång med child.remove() och skriv i kommentar vad som skiljer dem åt.

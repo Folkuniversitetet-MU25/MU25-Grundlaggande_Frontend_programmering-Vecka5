@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DOM – Code Along (light)</title>
+    <style>
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        margin: 16px;
+      }
+      .btn {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .highlight {
+        background: #fffae6;
+      }
+      ul {
+        padding-left: 1.2rem;
+      }
+      #playground {
+        border: 1px dashed #bbb;
+        padding: 12px;
+        min-height: 56px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">DOM Demo (Light)</h1>
+
+    <!-- Selektorer -->
+    <section id="selectors">
+      <h2>Selektorer</h2>
+      <p id="p-by-id">Hitta mig med getElementById()</p>
+      <p class="by-class">Hitta mig med getElementsByClassName()</p>
+      <p class="by-class">Och mig också (samma klass)</p>
+      <p>Hitta mig med getElementsByTagName('p')</p>
+      <p class="query">Hitta mig med querySelector('.query')</p>
+      <p class="query">
+        Vi är två med klassen <code>.query</code> → querySelectorAll()
+      </p>
+      <button id="run-selectors" class="btn">Kör selektor-demo</button>
+    </section>
+
+    <hr />
+
+    <!-- Ändra text & events -->
+    <section id="manipulation">
+      <h2>Ändra text & Event</h2>
+      <p id="message">Klick på knappen ändrar denna text.</p>
+      <button id="change-text" class="btn">Ändra text</button>
+      <button id="toggle-highlight" class="btn">Toggle .highlight</button>
+    </section>
+
+    <hr />
+
+    <!-- Input + hälsning -->
+    <section id="greet">
+      <h2>Input & hälsning</h2>
+      <input id="name-input" type="text" placeholder="Skriv ditt namn" />
+      <button id="say-hello" class="btn">Hälsa</button>
+      <p id="greeting"></p>
+    </section>
+
+    <hr />
+
+    <!-- Skapa / append / remove -->
+    <section id="create">
+      <h2>Skapa / Lägga till / Ta bort</h2>
+      <ul id="items">
+        <li>Redan existerande rad 1</li>
+        <li>Redan existerande rad 2</li>
+      </ul>
+      <div id="playground"></div>
+      <div style="margin-top: 0.5rem">
+        <input id="new-item-text" type="text" placeholder="Ny rad..." />
+        <button id="add-item" class="btn">Lägg till rad</button>
+        <button id="remove-last" class="btn">Ta bort sista</button>
+      </div>
+    </section>
+
+    <script src="scriptCA.js"></script>
+  </body>
+</html>
